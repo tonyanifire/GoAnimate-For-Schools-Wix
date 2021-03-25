@@ -1,0 +1,51 @@
+var _____WB$wombat$assign$function_____ = function(name) {return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name)) || self[name]; };
+if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; return this; } }
+{
+  let window = _____WB$wombat$assign$function_____("window");
+  let self = _____WB$wombat$assign$function_____("self");
+  let document = _____WB$wombat$assign$function_____("document");
+  let location = _____WB$wombat$assign$function_____("location");
+  let top = _____WB$wombat$assign$function_____("top");
+  let parent = _____WB$wombat$assign$function_____("parent");
+  let frames = _____WB$wombat$assign$function_____("frames");
+  let opener = _____WB$wombat$assign$function_____("opener");
+
+var character = "adam"; // change to "adam", "bob" , "eve" , or "rocky" depending on who you want to start with.
+
+$('#char_creator_client').flash({
+   id: "char_creator",
+   swf: "https://josephcrosmanplays532.github.io/animation/8389acc5d2f2b548/cc.swf",
+   height: 600,
+   width: 960,
+
+   align: "middle",
+   allowScriptAccess: "always",
+   allowFullScreen: "true",
+   wmode: "transparent",
+
+   hasVersion: "10.3",
+
+   flashvars: {"apiserver":"https:\/\/goanimate4schoolswix.com\/","m_mode":"school","bs":character,"isLogin":"Y","isEmbed":"0","ctc":"go","tlang":"en_US","storePath":"https:\/\/josephcrosmanplays532.github.io\/store\/3a981f5cb2739137\/<store>","clientThemePath":"https:\/\/josephcrosmanplays532.github.io\/static\/ad44370a650793d9\/<client_theme>","appCode":"go","page":"","siteId":"go","userId":"00EDZP3Cu0aw","themeId":"family","ut":30}});
+
+}
+/*
+     FILE ARCHIVED ON 13:28:53 Jun 26, 2019 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 23:54:03 Mar 25, 2021.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 124.655
+  exclusion.robots: 0.128
+  exclusion.robots.policy: 0.117
+  RedisCDXSource: 2.097
+  esindex: 0.01
+  LoadShardBlock: 93.749 (3)
+  PetaboxLoader3.datanode: 105.354 (4)
+  CDXLines.iter: 25.172 (3)
+  PetaboxLoader3.resolve: 94.592 (2)
+  load_resource: 125.923
+*/
