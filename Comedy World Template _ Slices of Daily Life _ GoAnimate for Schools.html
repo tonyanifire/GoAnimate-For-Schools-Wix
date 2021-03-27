@@ -97,7 +97,7 @@ function stepTo(step) {
         <p>The drill? 1. Select a template / 2. Choose characters / 3. Pull a script out of your best life observations / 4. Watch your masterpiece!</p>
     </div>
 
-    <a class="btn_next" href="/#step1" onclick="stepTo('#step1'); return false;">Next</a>
+    <a class="btn_next" href="#step1" onclick="stepTo('#step1'); return false;">Next</a>
 </div>
 
 <div id="seperator0"></div>
@@ -105,13 +105,13 @@ function stepTo(step) {
 <div id="step1" class="section">
     <h2>1. Choose a Setting</h2>
 
-    <a class="previous_step" href="/#intro" onclick="stepTo('#intro'); return false;">Back</a>
+    <a class="previous_step" href="#intro" onclick="stepTo('#intro'); return false;">Back</a>
 
     <div class="inside">
         <div id="template_name">Chilling Out in the Office</div>
         <div id="template_desc">Your characters are taking a break from a stressful day in the pantry. Now what could they be talking about?!</div>
         <div id="templates" class="item_selector">
-            <a class="select_button prev" href="/">&lt;</a>
+            <a class="select_button prev" href="#">&lt;</a>
             <div class="items">
                 <div class="item" data-tid="0RQRwrb_54Us" data-thumb="https://s3.amazonaws.com/fs.goanimate4schools.com/files/thumbnails/movie/532/60532/124123.jpg" title="Honey. We have to talk..." data-desc="It's time for serious couple talk... or maybe not. This is just a bedroom chat." data-char-thumb-a="https://d2qrjeyl4jwu9j.cloudfront.net/static/642cd772aad8e952/school/img/script2cartoon/everydaylife/step02/thumbs/bg01_a.jpg" data-char-thumb-b="https://d2qrjeyl4jwu9j.cloudfront.net/static/642cd772aad8e952/school/img/script2cartoon/everydaylife/step02/thumbs/bg01_b.jpg" data-plus="true">
                     <img src="http://josephcrosmanplays532.github.io/GoAnimate-For-Schools-Wix-Files/img/bg01.jpg">
@@ -165,7 +165,7 @@ function stepTo(step) {
             <a class="select_button next" href="#">&gt;</a>
         </div>
     </div>
-    <a class="btn_next" href="/#step2" onclick="stepTo('#step2'); return false;">Next</a>
+    <a class="btn_next" href="#step2" onclick="stepTo('#step2'); return false;">Next</a>
     <div class="upgrade">
         <a href="javascript:popUpgrade();" class="buttonbase buttonblue dark" style="margin:0 auto;float:none;display:block;">
 <div class="buttontitle">Upgrade Now</div>
@@ -178,7 +178,7 @@ function stepTo(step) {
 <div id="step2" class="section">
     <h2>2. Select Your Actors</h2>
 
-    <a class="previous_step" href="/#step1" onclick="stepTo('#step1'); return false;">Back</a>
+    <a class="previous_step" href="#step1" onclick="stepTo('#step1'); return false;">Back</a>
 
     <div class="inside">
         <div class="character">
@@ -375,7 +375,7 @@ var VoiceCatalog = (function() {
             <a href="javascript:;" class="buttonbase buttonblue dark" id="voiceselect_plusupgrade" style="margin:15px auto;float:left;display:none;">
 <div class="buttontitle">Upgrade Now</div>
 </a>
-            <a href="/" onclick="jQuery.unblockUI();return false;" class="bottomcancel"><div style="width: 180px">Cancel</div></a>
+            <a href="$" onclick="jQuery.unblockUI();return false;" class="bottomcancel"><div style="width: 180px">Cancel</div></a>
         </div>
         <a onclick="jQuery.unblockUI()" class="close_btn">×</a>
     </div>
@@ -429,7 +429,7 @@ var VoiceCatalog = (function() {
                             <a href="http://web.archive.org/web/20190610025306/https://goanimate4schools.com/public_features" class="buttonbase buttonpurple3 dark" id="voiceselectonly_plusupgrade" style="margin:15px auto;float:left;display:none;">
 <div class="buttontitle">Get a quote</div>
 </a>
-                        <a href="/" onclick="jQuery.unblockUI();return false;" class="bottomcancel"><div style="width: 180px">Cancel</div></a>
+                        <a href="#" onclick="jQuery.unblockUI();return false;" class="bottomcancel"><div style="width: 180px">Cancel</div></a>
         </div>
         <a onclick="jQuery.unblockUI()" class="close_btn">×</a>
     </div>
@@ -474,7 +474,7 @@ var VoiceCatalog = (function() {
     </div>
 </script>
 
-    <a class="btn_next" href="/#step3" onclick="stepTo('#step3'); return false;">Next</a>
+    <a class="btn_next" href="#step3" onclick="stepTo('#step3'); return false;">Next</a>
     <div class="upgrade">
         <a href="javascript:popUpgrade();" class="buttonbase buttonblue dark" style="margin:0 auto;float:none;display:block;">
 <div class="buttontitle">Upgrade Now</div>
@@ -603,7 +603,7 @@ jQuery('#dialogs .dialog').scriptDialog();
 <div id="step4" class="section">
     <h2>4. Preview Your Video</h2>
 
-    <a class="previous_step" href="/#step3" onclick="stepTo('#step3'); return false;">Back</a>
+    <a class="previous_step" href="#step3" onclick="stepTo('#step3'); return false;">Back</a>
 
     <div class="inside">
         <div class="upgrade" style="display:none">
@@ -614,7 +614,7 @@ jQuery('#dialogs .dialog').scriptDialog();
 </a>
         </div>
         <div class="generate">
-            <a class="btn_preview" href="/" onclick="GoLite.preview(); return false;">Generate Preview</a>
+            <a class="btn_preview" href="#" onclick="GoLite.preview(); return false;">Generate Preview</a>
             <p>You made all the changes you wanted to your video?<br>
             Let's see how it looks like then!</p>
         </div>
@@ -623,7 +623,7 @@ jQuery('#dialogs .dialog').scriptDialog();
             <div id="player_container">
                 You can't use GoAnimate because Flash might be disabled. <a href="http://web.archive.org/web/20190610025306/https://get.adobe.com/flashplayer/">Enable Flash</a>.
             </div>
-            <a id="btn_save" href="/" onclick="jQuery(document).trigger('GoLite.stateChange', ['save']); return false;">Save Now</a>
+            <a id="btn_save" href="#" onclick="jQuery(document).trigger('GoLite.stateChange', ['save']); return false;">Save Now</a>
         </div>
 
         <div class="save" style="display:none">
@@ -648,11 +648,11 @@ jQuery('#dialogs .dialog').scriptDialog();
             <div class="clear"></div>
             <div class="group_message" style="color:#999999;font-size:19px;padding-top:10px;text-align:center;">When you are finished with your video, you can post it to a group from the video page.</div>
             <div class="buttons">
-                <a id="btn_publish" href="/" style="font-size:21px;" onclick="GoLite.save(); return false;">Save and Go To Video Page</a>
+                <a id="btn_publish" href="#" style="font-size:21px;" onclick="GoLite.save(); return false;">Save and Go To Video Page</a>
             </div>
             <div class="clear"></div>
 
-            <a id="back_preview" href="/" onclick="jQuery(document).trigger('GoLite.stateChange', ['preview']); return false;">&lt; Back to Preview</a>
+            <a id="back_preview" href="#" onclick="jQuery(document).trigger('GoLite.stateChange', ['preview']); return false;">&lt; Back to Preview</a>
         </div>
     </div>
 </div>
