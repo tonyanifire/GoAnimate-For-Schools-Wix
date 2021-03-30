@@ -617,4 +617,180 @@
         </div>
     </div>
 </nav>
-<iframe src="https://josephcrosmanplays532.github.io/GoAnimate-Legacy-Static/" width="1000" height="1000">Your browser does not support the iframe tag. Please upgrade your browser and try again.</iframe>
+<link href="https://josephcrosmanplays532.github.io/GoAnimate-For-Schools-Wix-Files/css/old.css" rel="stylesheet" type="text/css">
+
+
+<div style="position:relative;">
+    <div id="studioBlock" style="height: 0px;"><!-- --></div>
+
+    <div id="playerBlock"></div>
+</div>
+
+    <div id="previewPlayerContainer" style="display: none;">
+        <div class="preview-player" id="previewPlayer">
+            <h2>Preview Video</h2>
+            <div id="playerdiv"></div>
+            <div class="buttons clearfix">
+                <button class="preview-button edit" onclick="switchBackToStudio();">Back to editing</button>
+                <button class="preview-button save" onclick="publishStudio();">Save Now</button>            </div>
+
+            <a class="close_btn" href="#" onclick="switchBackToStudio(); return false;">×</a>
+        </div>
+    </div>
+    <div class="video-tutorial" id="video-tutorial" style="display: none;">
+        <div class="video-tutorial-body">
+            <h2>&nbsp;</h2>
+            <div class="video-tutorial-player">
+                <div id="wistia_player" class="wistia_embed" style="width:860px;height:445px">&nbsp;</div>
+            </div>
+            <a class="close_btn" href="#" onclick="return false;">×</a>
+        </div>
+        <div class="video-tutorial-footer clearfix">
+            <button class="tutorial-button" type="button">
+                Close            </button>
+        </div>
+    </div>
+
+
+<div style="display:none">
+    
+</div>
+
+<script>
+
+    var hideHTMLBox = function() {
+        window.close();
+    };
+
+    function tutorialStarted() {
+    }
+    function tutorialStep(sn) {
+    }
+    function tutorialCompleted() {
+    }
+
+    var enable_full_screen = true;
+
+    var studio_data = {
+        id: "Studio",
+        swf: "https://josephcrosmanplays532.github.io/animation/8389acc5d2f2b548/go_full.swf",
+        width: "100%",
+        height: "100%",
+
+        align: "middle",
+        allowScriptAccess: "always",
+        allowFullScreen: "true",
+        wmode: "window",
+
+        hasVersion: "10.3"
+    };
+
+    if (!enable_full_screen) {
+        studio_data.width  = 960;
+        studio_data.height  = 630;
+        resize_studio = false;
+    }
+
+studio_data.flashvars={"apiserver":"https://goanimate4schoolswix.herokuapp.com/","storePath":"https://josephcrosmanplays532.github.io/store/3a981f5cb2739137/<store>","isEmbed":1,"ctc":"go","ut":60,"bs":"default","appCode":"go","page":"","siteId":"go","lid":13,"isLogin":"Y","retut":1,"clientThemePath":"https://josephcrosmanplays532.github.io/static/ad44370a650793d9/<client_theme>","themeId":"custom","tlang":"en_US","presaveId":"m-1","goteam_draft_only":1,"isWide":1,"nextUrl":"https://josephcrosmanplays532.github.io/GoAnimate-For-Schools-Wix","tray":"custom"};
+
+var _ccad = null;
+
+function proceedWithFullscreenStudio() {
+    // These should be executed only when we are really ready to show the studio
+    window.onbeforeunload = function(e) {
+        var e = e || window.event;
+        var msg = null;
+        if (loadedFullscreenStudio && studioApiReady) {
+            msg = 'You are about to lose all your unsaved changes in the studio.';
+        }
+        if (e && msg != null) {
+            e.returnValue = msg;
+        }
+
+        if (msg != null) {
+            return msg;
+        }
+    };
+
+    $('div#studioBlock').css('height', '0px');
+    $('#studio_holder').flash(studio_data);
+    full_screen_studio();
+
+    ajust_studio();
+}
+
+
+    var studioApiReady = false;
+    var videoTutorial = null;
+
+    function studioLoaded() {
+        studioApiReady = true;
+        $(document).trigger('studioApiReady');
+    };
+    $(document).ready(function() {
+        if (enable_full_screen) {
+
+            if (!true) {
+                $('#studio_container').css('top', '0px');
+            }
+            $('#studio_container').show();
+            $('.site-footer').hide();
+            $('#studioBlock').css('height', '1800px');
+
+            if (false) {
+                checkCopyMovie('javascript:proceedWithFullscreenStudio()', '');
+            } else if (false) {
+                checkEditMovie('');
+            } else {
+                proceedWithFullscreenStudio();
+            }
+
+            $(window).on('resize', function() {
+                ajust_studio();
+            });
+            $(window).on('studio_resized', function() {
+                if (show_cc_ad) {
+                    _ccad.refreshThumbs();
+                }
+            });
+
+            if (studioApiReady) {
+                var api = studioApi($('#studio_holder'));
+                api.bindStudioEvents();
+            }
+            $('.ga-importer').prependTo($('#studio_container'));
+        } else {
+            $('#studioBlock').flash(studio_data);
+        }
+        // Video Tutorial
+        videoTutorial = new VideoTutorial($("#video-tutorial"));
+    })
+    // restore studio when upsell overlay hidden
+    .on('hidden', '#upsell-modal', function(e) {
+        if ($(e.target).attr('id') == 'upsell-modal') {
+            restoreStudio();
+        }
+    })
+    .on('studioApiReady', function() {
+        var api = studioApi($('#studio_holder'));
+        api.bindStudioEvents();
+    })
+    jQuery("#previewPlayerContainer, #video-tutorial").hide();
+
+    function initPreviewPlayer(dataXmlStr, startFrame) {
+        savePreviewData(dataXmlStr);
+
+        if (typeof startFrame == 'undefined') {
+            startFrame = 1;
+        } else {
+            startFrame = Math.max(1, parseInt(startFrame));
+        }
+
+        previewSceen();
+        jQuery("#previewPlayerContainer").show();
+
+        createPreviewPlayer("playerdiv", {
+            height: 360,
+            width: 640,
+            player_url: "https://josephcrosmanplays532.github.io/animation/8389acc5d2f2b548/player.swf",
+            quality: "medium"
