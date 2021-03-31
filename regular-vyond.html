@@ -388,12 +388,6 @@ function voiceBanner(bannerId) {
                 })();
             }
 
-            show_voice_ad = false;
-            $('#studio_container').append($('div.templates div.voice-vendor-ad').clone());
-            if (show_voice_ad) {
-                showVoiceAdWidget();
-            }
-
 
             $('div#studioBlock').css('height', '0px');
             $('#studio_holder').flash(studio_data);
