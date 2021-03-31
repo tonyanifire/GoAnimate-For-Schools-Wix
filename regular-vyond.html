@@ -294,26 +294,9 @@ function voiceBanner(bannerId) {
 </div>
 
     <script>
-        interactiveTutorial.isShowTutorial = false;
-
-        var hideHTMLBox = function() {
-            window.close();
-        };
-
-        function tutorialStarted() {
-        }
-        function tutorialStep(sn) {
-        }
-        function tutorialCompleted() {
-            $.ajax({
-                type: 'POST',
-                url: '/ajax/tutorialStatus/completed'
-            });
-        }
-
-        var enable_full_screen = true;
-
-        var studio_data = {
+        interactiveTutorial={neverDisplay:function(){return true}};
+        </script>
+            var studio_data = {
             id: "Studio",
             swf: "https://josephcrosmanplays532.github.io/animation/66453a3ba2cc5e1b/go_full.swf",
             width: "100%",
